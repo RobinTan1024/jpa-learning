@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+
+    <changeSet id="init-1" author="Robin">
+        <createTable tableName="student">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="surname" type="VARCHAR2(20)"/>
+            <column name="given_name" type="VARCHAR(20)"/>
+            <column name="age" type="INT"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="init-2" author="Robin">
+        <createTable tableName="pk_id">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="pk_name" type="VARCHAR2(50)"/>
+            <column name="pk_value" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="init-3" author="Robin">
+        <createTable tableName="klass">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="grade" type="INT"/>
+            <column name="class_no" type="INT"/>
+            <column name="name" type="VARCHAR2(50)"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

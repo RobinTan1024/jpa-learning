@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+
+    <changeSet id="demo-products-1" author="Robin">
+        <createTable tableName="products">
+            <column name="product_id" type="INTEGER">
+                <constraints primaryKey="true" unique="true" nullable="false"/>
+            </column>
+            <column name="product_type" type="VARCHAR2(100)"/>
+            <column name="product_sub_type" type="VARCHAR2(100)"/>
+            <column name="product_name" type="VARCHAR2(100)"/>
+            <column name="product_desc" type="VARCHAR2(100)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="demo-products-data-1" author="Robin">
+        <loadData tableName="products" file="classpath:liquibase/demo/products.csv"/>
+    </changeSet>
+</databaseChangeLog>
